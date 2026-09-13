@@ -1,17 +1,16 @@
 extends Node
 
 @export var money = 100
-@export var seconds_per_tick = 20 # 1 tick = 30 min	
 
 # Bills that will be charged the next day
 @export var bills = []
 
-@export var current_tick = 0
-
 signal bill_charged
 signal day_passed
 signal day_started
-signal tick(current_tick: int)
+
+func _ready() -> void:
+	TimeManager.day_started.connect(_on_day_started)
 
 func get_today_bill():
 	return {
@@ -37,12 +36,11 @@ func finish_task(task: Task):
 func _begin_morning() -> void:
 	day_started.emit()
 	_charge_bill()
-	bill_charged.emit()
+	# bill_charged.emit()
 	# wait for confirm_pay_bill() to continue
 
 func _charge_bill() -> void:
 	var next_bills = []
 
-func _on_timer_timeout() -> void:
-	current_tick += 1
-	tick.emit(current_tick)
+func _on_day_started(_day: int) -> void:
+	_begin_morning()

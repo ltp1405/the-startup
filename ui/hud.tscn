@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cigruexojtlgg"]
 
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_hud"]
+
 [node name="MarginContainer" type="MarginContainer" unique_id=1878832151]
 offset_right = 1152.0
 offset_bottom = 649.0
+script = ExtResource("1_hud")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=661636780]
 layout_mode = 2

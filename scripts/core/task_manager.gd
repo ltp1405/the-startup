@@ -6,7 +6,9 @@ extends Node
 #   acquire - a customer NPC offers a task, the player accepts -> add_task() -> backlog
 #   assign  - the player picks a backlog task for a worker NPC -> assign() -> active
 #
-# Progress is driven by GameManager.tick. Nothing else should count a task down.
+# Progress is driven by TimeManager.tick. Nothing else should count a task down.
+#
+# Task.time and Task.deadline are authored in in-game HOURS and converted to ticks here.
 
 signal backlog_changed
 signal task_assigned(task: Task, worker: Object)
@@ -26,7 +28,7 @@ var completed: Array[Task] = []
 var _deadlines: Dictionary = {}
 
 func _ready() -> void:
-	GameManager.tick.connect(_on_tick)
+	TimeManager.tick.connect(_on_tick)
 
 # ==== ACQUIRE ====
 
@@ -37,7 +39,7 @@ func add_task(task: Task) -> bool:
 		push_warning("Task already taken: %s" % task.title)
 		return false
 	backlog.append(task)
-	_deadlines[task] = task.deadline
+	_deadlines[task] = TimeManager.hours_to_ticks(task.deadline)
 	backlog_changed.emit()
 	return true
 
@@ -50,11 +52,12 @@ func assign(task: Task, worker: Object) -> bool:
 	if not can_assign(task, worker):
 		return false
 	assert(task.time > 0, "Task time must not be zero")
+	var ticks := TimeManager.hours_to_ticks(task.time)
 	backlog.erase(task)
-	active[task] = {"worker": worker, "remaining": task.time}
+	active[task] = {"worker": worker, "remaining": ticks}
 	backlog_changed.emit()
 	task_assigned.emit(task, worker)
-	task_progressed.emit(task, worker, task.time)
+	task_progressed.emit(task, worker, ticks)
 	return true
 
 func abandon(task: Task) -> bool:

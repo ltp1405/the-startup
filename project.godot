@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="the-startup"
-run/main_scene="uid://dhpo24cqyysrv"
+run/main_scene="uid://bqoai13omrree"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://bcsak0qlqo3j8"
 TaskManager="*res://scripts/core/task_manager.gd"
+TimeManager="*res://scripts/core/time_manager.gd"
 
 [display]
 

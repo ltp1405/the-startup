@@ -11,18 +11,22 @@
 [ext_resource type="Resource" uid="uid://bh5ml64fcqqdc" path="res://tasks/task2.tres" id="7_67i1f"]
 [ext_resource type="PackedScene" uid="uid://cigruexojtlgg" path="res://ui/hud.tscn" id="8_sxsdu"]
 [ext_resource type="PackedScene" uid="uid://bcongf7fiona8" path="res://ui/accept_task_box.tscn" id="9_sxsdu"]
+[ext_resource type="Script" uid="uid://fifivyf7dupk" path="res://scripts/day_night.gd" id="10_dnght"]
+[ext_resource type="Script" uid="uid://djawf2sd1mf65" path="res://scripts/shop.gd" id="13_p8fqh"]
+[ext_resource type="Texture2D" uid="uid://cjwc7oao53dyh" path="res://icon.svg" id="14_hfttt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dsbex"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6qi2b"]
 radius = 14.550841
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsbex"]
+
 [node name="office2" type="Node2D" unique_id=1062037208]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=37416726]
 position = Vector2(268, 200)
-scale = Vector2(0.5, 0.5)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(2, 2)
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=478159916]
 tile_map_data = PackedByteArray("AAAOAAkAAQALAAUAAAAPAAoAAQALAAYAAAAQAAoAAQALAAYAAAARAAoAAQALAAYAAAASAAoAAQALAAYAAAATAAoAAQALAAYAAAAUAAoAAQALAAYAAAAOAAoAAQALAAYAAAAPAAkAAQALAAUAAAAQAAkAAQALAAUAAAARAAkAAQALAAUAAAASAAkAAQALAAUAAAATAAkAAQALAAUAAAAUAAkAAQALAAUAAAAOAAsAAQALAAYAAAAOAAwAAQALAAYAAAAOAA0AAQALAAYAAAAPAAsAAQALAAYAAAAPAAwAAQALAAYAAAAPAA0AAQALAAYAAAAQAA0AAQALAAYAAAAQAAwAAQALAAYAAAAQAAsAAQALAAYAAAARAAsAAQALAAYAAAARAAwAAQALAAYAAAARAA0AAQALAAYAAAASAA0AAQALAAYAAAASAAwAAQALAAYAAAATAAwAAQALAAYAAAATAAsAAQALAAYAAAAUAAsAAQALAAYAAAAUAAwAAQALAAYAAAAUAA0AAQALAAYAAAATAA0AAQALAAYAAAASAAsAAQALAAYAAAANAAwAAQALAAYAAAANAAsAAQALAAYAAAA=")
@@ -113,6 +117,9 @@ offset_bottom = 9.0
 theme_override_font_sizes/font_size = 6
 text = "Working"
 
+[node name="DayNight" type="CanvasModulate" parent="." unique_id=1409277351]
+script = ExtResource("10_dnght")
+
 [node name="ui" type="CanvasLayer" parent="." unique_id=438605276]
 
 [node name="HUD" parent="ui" unique_id=1470900651 instance=ExtResource("8_sxsdu")]
@@ -141,3 +148,15 @@ mouse_filter = 0
 
 [node name="AcceptTaskBox" parent="ui" unique_id=1635820334 instance=ExtResource("9_sxsdu")]
 visible = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=900378098]
+position = Vector2(268, 224)
+script = ExtResource("13_p8fqh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1769195940]
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("14_hfttt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1739928419]
+shape = SubResource("RectangleShape2D_dsbex")
+debug_color = Color(0.7530656, 0.44857943, 0.25734317, 0.41960785)

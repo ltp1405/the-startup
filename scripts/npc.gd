@@ -50,7 +50,7 @@ func _on_task_assigned(_task: Task, worker: Object) -> void:
 
 func _on_task_progressed(_task: Task, worker: Object, remaining: int) -> void:
 	if worker == self:
-		label.text = "%d hrs remain" % remaining
+		label.text = "%.1f hrs remain" % TimeManager.ticks_to_hours(remaining)
 
 func _on_task_finished(_task: Task, worker: Object) -> void:
 	if worker == self:

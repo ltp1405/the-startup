@@ -1,18 +1,9 @@
 [gd_scene format=3 uid="uid://bcsak0qlqo3j8"]
 
 [ext_resource type="Script" uid="uid://bfhuiu37umk34" path="res://scripts/core/game_manager.gd" id="1_smx3j"]
-[ext_resource type="Script" uid="uid://cl35v70xsnelq" path="res://scripts/core/day_loop.gd" id="2_o2178"]
 
 [node name="GameManager" type="Node" unique_id=67717745]
 script = ExtResource("1_smx3j")
 
-[node name="Timer" type="Timer" parent="." unique_id=646415049]
-wait_time = 5.0
-autostart = true
-
 [node name="EmployeeManager" type="Node" parent="." unique_id=338081013]
 
-[node name="DayLoop" type="Node" parent="." unique_id=1537828613]
-script = ExtResource("2_o2178")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
