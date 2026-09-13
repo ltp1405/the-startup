@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dhpo24cqyysrv"]
+
+[ext_resource type="PackedScene" uid="uid://bqoai13omrree" path="res://scenes/office2.tscn" id="1_80nbo"]
+
+[node name="Node2D" type="Node2D" unique_id=340494621]
+
+[node name="Node2D" parent="." unique_id=1062037208 instance=ExtResource("1_80nbo")]
+position = Vector2(-492, -347)
+scale = Vector2(4, 4)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bmb06oj7xfwc3"]
+
+[ext_resource type="Script" uid="uid://cg2cmge0ttlur" path="res://scripts/player.gd" id="1_script"]
+[ext_resource type="SpriteFrames" uid="uid://dn35v4xf2ue2i" path="res://john_frames.tres" id="2_frames"]
+[ext_resource type="Script" uid="uid://ni11mcge6frd" path="res://animated_sprite_2d.gd" id="3_s8cws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(14, 8)
+
+[node name="John" type="CharacterBody2D" unique_id=357327368]
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=694684428]
+texture_filter = 1
+sprite_frames = ExtResource("2_frames")
+animation = &"idle_down"
+offset = Vector2(0, -32)
+script = ExtResource("3_s8cws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1182664442]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_1")

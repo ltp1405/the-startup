@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://crca7tlo4gq1m"]
+
+[ext_resource type="PackedScene" uid="uid://b46jp6ytwok36" path="res://lily.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dux5tclqfnpsu" path="res://dialouge.gd" id="2_0xm2m"]
+
+[node name="Node2D" type="Node2D" unique_id=623906428]
+
+[node name="John" parent="." unique_id=262455218 instance=ExtResource("1_ig7tw")]
+position = Vector2(649, 282)
+scale = Vector2(4, 4)
+initial_facing = "left"
+
+[node name="Lily" parent="." unique_id=165468463 instance=ExtResource("1_ig7tw")]
+position = Vector2(536, 285)
+scale = Vector2(4, 4)
+initial_facing = "right"
+
+[node name="Dialouge" type="Node2D" parent="." unique_id=271128309]
+script = ExtResource("2_0xm2m")

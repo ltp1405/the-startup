@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Task" format=3 uid="uid://bh5ml64fcqqdc"]
+
+[ext_resource type="Script" uid="uid://bx0t73ct35fxr" path="res://task.gd" id="1_m3rsq"]
+
+[resource]
+script = ExtResource("1_m3rsq")
+title = "Tiệm trà sữa II"
+energy = 5
+description = "Tiệm trà sữa II: AI vẽ poster ra ổ bánh mì mọc 6 ngón tay"
+time = 5
+money = 20
+deadline = 10
+metadata/_custom_type_script = "uid://bx0t73ct35fxr"

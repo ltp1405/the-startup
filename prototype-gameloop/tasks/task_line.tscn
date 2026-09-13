@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://ckbppkr7wq4mu"]
+
+[ext_resource type="Script" uid="uid://d0q5jfcaulbvo" path="res://tasks/task_line.gd" id="1_r2qs2"]
+[ext_resource type="Texture2D" uid="uid://bvdrade2sqqj" path="res://icon.svg" id="2_fj4w6"]
+
+[node name="TaskLine" type="HBoxContainer" unique_id=288888243]
+anchors_preset = -1
+anchor_left = 0.23300001
+anchor_top = 0.10700001
+anchor_right = 0.46600002
+anchor_bottom = 0.215
+offset_left = -268.41602
+offset_top = -69.336006
+offset_right = -1.8320313
+offset_bottom = -8.320007
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+script = ExtResource("1_r2qs2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=370695912]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Customer Avatar" type="TextureRect" parent="HBoxContainer" unique_id=1335004348]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_fj4w6")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1256650234]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=872619214]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 18
+text = "Title"
+
+[node name="Description" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1736832107]
+custom_minimum_size = Vector2(350, 0)
+custom_maximum_size = Vector2(350, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+text = "Shop quần áo: AI gợi ý size chuẩn cho ma-nơ-canh, sai cho người"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=2109958105]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+text = "Nhận"

@@ -1,0 +1,143 @@
+[gd_scene format=4 uid="uid://bqoai13omrree"]
+
+[ext_resource type="TileSet" uid="uid://8llq7qln3ucm" path="res://office1616.tres" id="1_vp07x"]
+[ext_resource type="PackedScene" uid="uid://b46jp6ytwok36" path="res://lily.tscn" id="2_fpnhl"]
+[ext_resource type="Script" uid="uid://c2qb8uarle3kj" path="res://scripts/npc.gd" id="3_iw4oi"]
+[ext_resource type="SpriteFrames" uid="uid://d3g1jv0mdunwm" path="res://lily_frames.tres" id="4_316yu"]
+[ext_resource type="Script" uid="uid://bnf4yhohikelc" path="res://scenes/npc_interact.gd" id="5_316yu"]
+[ext_resource type="Script" uid="uid://bx0t73ct35fxr" path="res://task.gd" id="6_e6yw2"]
+[ext_resource type="PackedScene" uid="uid://1cjak7732pqm" path="res://ui/bill_ui.tscn" id="6_gfqbh"]
+[ext_resource type="PackedScene" uid="uid://kqtxsyxl0d4l" path="res://ui/choose_task_ui.tscn" id="6_gx2u7"]
+[ext_resource type="Resource" uid="uid://bh5ml64fcqqdc" path="res://tasks/task2.tres" id="7_67i1f"]
+[ext_resource type="PackedScene" uid="uid://cigruexojtlgg" path="res://ui/hud.tscn" id="8_sxsdu"]
+[ext_resource type="PackedScene" uid="uid://bcongf7fiona8" path="res://ui/accept_task_box.tscn" id="9_sxsdu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dsbex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qi2b"]
+radius = 14.550841
+
+[node name="office2" type="Node2D" unique_id=1062037208]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=37416726]
+position = Vector2(268, 200)
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=478159916]
+tile_map_data = PackedByteArray("AAAOAAkAAQALAAUAAAAPAAoAAQALAAYAAAAQAAoAAQALAAYAAAARAAoAAQALAAYAAAASAAoAAQALAAYAAAATAAoAAQALAAYAAAAUAAoAAQALAAYAAAAOAAoAAQALAAYAAAAPAAkAAQALAAUAAAAQAAkAAQALAAUAAAARAAkAAQALAAUAAAASAAkAAQALAAUAAAATAAkAAQALAAUAAAAUAAkAAQALAAUAAAAOAAsAAQALAAYAAAAOAAwAAQALAAYAAAAOAA0AAQALAAYAAAAPAAsAAQALAAYAAAAPAAwAAQALAAYAAAAPAA0AAQALAAYAAAAQAA0AAQALAAYAAAAQAAwAAQALAAYAAAAQAAsAAQALAAYAAAARAAsAAQALAAYAAAARAAwAAQALAAYAAAARAA0AAQALAAYAAAASAA0AAQALAAYAAAASAAwAAQALAAYAAAATAAwAAQALAAYAAAATAAsAAQALAAYAAAAUAAsAAQALAAYAAAAUAAwAAQALAAYAAAAUAA0AAQALAAYAAAATAA0AAQALAAYAAAASAAsAAQALAAYAAAANAAwAAQALAAYAAAANAAsAAQALAAYAAAA=")
+tile_set = ExtResource("1_vp07x")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=811868812]
+tile_map_data = PackedByteArray("AAAOAAcAAQABAAkAAAAOAAgAAQABAAoAAAAQAAcAAQABAAkAAAAQAAgAAQABAAoAAAAPAAcAAQABAAkAAAAPAAgAAQABAAoAAAARAAcAAQABAAkAAAARAAgAAQABAAoAAAASAAcAAQABAAkAAAASAAgAAQABAAoAAAATAAcAAQABAAkAAAATAAgAAQABAAoAAAAUAAcAAQABAAkAAAAUAAgAAQABAAoAAAANAAcAAQAHAAEAAAANAAgAAQAHAAIAAAANAAkAAQAHAAIAAAAVAAkAAQAJAAIAAAAVAAoAAQAJAAIAAAAVAAsAAQAJAAIAAAAVAAwAAQAJAAIAAAAVAA0AAQAJAAIAAAAVAA4AAQAJAAMAAAAUAA4AAQAIAAMAAAATAA4AAQAIAAMAAAASAA4AAQAIAAMAAAARAA4AAQAIAAMAAAAQAA4AAQAIAAMAAAAPAA4AAQAIAAMAAAAOAA4AAQAIAAMAAAANAA0AAQABAAIAAAANAA4AAQAHAAMAAAANAAoAAQACAAkAAAANAAsAAQACAAoAAAAVAAgAAQAJAAIAAAAVAAcAAQAJAAEAAAA=")
+tile_set = ExtResource("1_vp07x")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2024724221]
+tile_map_data = PackedByteArray("AAAQAAoAAAAHAB4AAAAQAAsAAAAHAB8AAAARAAoAAAAIAB4AAAARAAsAAAAIAB8AAAASAAoAAAAJAB4AAAASAAsAAAAJAB8AAAA=")
+tile_set = ExtResource("1_vp07x")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1024568910]
+tile_map_data = PackedByteArray("AAAQAAsAAAAHABwAAAAQAAwAAAAHAB0AAAARAAsAAAAIABwAAAARAAwAAAAIAB0AAAASAAsAAAAJABwAAAASAAwAAAAJAB0AAAA=")
+tile_set = ExtResource("1_vp07x")
+
+[node name="Chair" type="TileMapLayer" parent="." unique_id=1013925138]
+tile_map_data = PackedByteArray("AAARAAkAAAABAAgAAAARAAoAAAABAAkAAAARAAwAAAAAAAoAAAARAA0AAAAAAAsAAAA=")
+tile_set = ExtResource("1_vp07x")
+
+[node name="TileMapLayer4" type="TileMapLayer" parent="." unique_id=647114567]
+tile_map_data = PackedByteArray("AAAOAAcAAAAGAAcAAAAOAAgAAAAGAAgAAAAOAAkAAAAGAAkAAAARAAcAAAAIAAgAAAARAAgAAAAIAAkAAAASAAcAAAAJAAgAAAASAAgAAAAJAAkAAAAUAA0AAAAGAAoAAAARAAsAAAALABoAAAARAAwAAAALABsAAAAQAAwAAAAKABsAAAA=")
+tile_set = ExtResource("1_vp07x")
+
+[node name="TileMapLayer5" type="TileMapLayer" parent="." unique_id=217466151]
+tile_map_data = PackedByteArray("AAARAAoAAAAKAAcAAAAQAAoAAAAQAAoAAAARAAsAAAAKAAgAAAAQAAsAAAAQAAsAAAA=")
+tile_set = ExtResource("1_vp07x")
+
+[node name="Lily" parent="." unique_id=906752308 instance=ExtResource("2_fpnhl")]
+position = Vector2(234, 189)
+walk_speed = 100.0
+run_speed = 200.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=34873031]
+position = Vector2(257, 148)
+script = ExtResource("3_iw4oi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1904052444]
+shape = SubResource("CircleShape2D_dsbex")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=442884897]
+sprite_frames = ExtResource("4_316yu")
+animation = &"attack_a_down"
+
+[node name="InteractionArea" type="Area2D" parent="CharacterBody2D" unique_id=406462692]
+script = ExtResource("5_316yu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/InteractionArea" unique_id=1301243581]
+position = Vector2(-0.5499878, 5.7100067)
+shape = SubResource("CircleShape2D_6qi2b")
+
+[node name="Label" type="Label" parent="CharacterBody2D" unique_id=362629956]
+visible = false
+offset_left = -13.0
+offset_top = -14.0
+offset_right = 52.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 6
+text = "Working"
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=1765818787]
+position = Vector2(195, 189)
+script = ExtResource("3_iw4oi")
+can_assign_task = false
+tasks_to_give = Array[ExtResource("6_e6yw2")]([ExtResource("7_67i1f")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=753258566]
+shape = SubResource("CircleShape2D_dsbex")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2" unique_id=214055600]
+sprite_frames = ExtResource("4_316yu")
+animation = &"attack_a_down"
+
+[node name="InteractionArea" type="Area2D" parent="CharacterBody2D2" unique_id=366683225]
+script = ExtResource("5_316yu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2/InteractionArea" unique_id=2066802685]
+position = Vector2(-0.5499878, 5.7100067)
+shape = SubResource("CircleShape2D_6qi2b")
+
+[node name="Label" type="Label" parent="CharacterBody2D2" unique_id=746854343]
+visible = false
+offset_left = -13.0
+offset_top = -14.0
+offset_right = 52.0
+offset_bottom = 9.0
+theme_override_font_sizes/font_size = 6
+text = "Working"
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=438605276]
+
+[node name="HUD" parent="ui" unique_id=1470900651 instance=ExtResource("8_sxsdu")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Bill List" parent="ui" unique_id=942198591 instance=ExtResource("6_gfqbh")]
+visible = false
+
+[node name="ChooseTaskUI" parent="ui" unique_id=1947115045 instance=ExtResource("6_gx2u7")]
+visible = false
+mouse_filter = 0
+
+[node name="AcceptTaskBox" parent="ui" unique_id=1635820334 instance=ExtResource("9_sxsdu")]
+visible = false

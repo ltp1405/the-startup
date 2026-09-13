@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cigruexojtlgg"]
+
+[node name="MarginContainer" type="MarginContainer" unique_id=1878832151]
+offset_right = 1152.0
+offset_bottom = 649.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=661636780]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=2104467399]
+layout_mode = 2
+text = "Date 2"
+
+[node name="Label2" type="Label" parent="HBoxContainer" unique_id=96382579]
+layout_mode = 2
+text = "Time 2 pm"
+
+[node name="Label3" type="Label" parent="HBoxContainer" unique_id=578896823]
+layout_mode = 2
+text = "Money 1000"

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b46jp6ytwok36"]
+
+[ext_resource type="Script" uid="uid://coiuitvmowwrm" path="res://character_anim_autostart.gd" id="1_bfiln"]
+[ext_resource type="SpriteFrames" uid="uid://d3g1jv0mdunwm" path="res://lily_frames.tres" id="1_y7j7m"]
+[ext_resource type="Script" uid="uid://cg2cmge0ttlur" path="res://character.gd" id="3_uabe2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsbex"]
+
+[node name="Node2D" type="CharacterBody2D" unique_id=262455218]
+script = ExtResource("3_uabe2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1042463337]
+sprite_frames = ExtResource("1_y7j7m")
+animation = &"idle_static_right"
+script = ExtResource("1_bfiln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=512239915]
+shape = SubResource("RectangleShape2D_dsbex")

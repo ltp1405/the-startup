@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://kqtxsyxl0d4l"]
+
+[ext_resource type="Script" uid="uid://bj0np2842aurq" path="res://tasks/choose_task_ui.gd" id="1_inrwb"]
+[ext_resource type="PackedScene" uid="uid://ckbppkr7wq4mu" path="res://tasks/task_line.tscn" id="1_k3713"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsbex"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.681375, 0.69, 0.5865, 1)
+shadow_color = Color(0.01, 0.01, 0.01, 0.85882354)
+shadow_offset = Vector2(1.76, 2.73)
+
+[node name="ChooseTaskUI" type="CenterContainer" unique_id=942198591]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_inrwb")
+
+[node name="PaneContainer" type="PanelContainer" parent="." unique_id=1618629014]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsbex")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PaneContainer" unique_id=1524739362]
+layout_mode = 2
+
+[node name="CloseBtn" type="Button" parent="PaneContainer/VBoxContainer" unique_id=295392382]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.88, 0.8494933, 0.7656, 1)
+text = "Close
+"
+
+[node name="Scroll" type="ScrollContainer" parent="PaneContainer/VBoxContainer" unique_id=1029445162]
+custom_minimum_size = Vector2(600, 500)
+layout_mode = 2
+
+[node name="ItemList" type="VBoxContainer" parent="PaneContainer/VBoxContainer/Scroll" unique_id=2075388718]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="TaskLine" parent="PaneContainer/VBoxContainer/Scroll/ItemList" unique_id=1730714402 instance=ExtResource("1_k3713")]
+layout_mode = 2
+
+[node name="TaskLine2" parent="PaneContainer/VBoxContainer/Scroll/ItemList" unique_id=105444575 instance=ExtResource("1_k3713")]
+layout_mode = 2
+
+[node name="TaskLine3" parent="PaneContainer/VBoxContainer/Scroll/ItemList" unique_id=288888243 instance=ExtResource("1_k3713")]
+layout_mode = 2
+
+[node name="TaskLine4" parent="PaneContainer/VBoxContainer/Scroll/ItemList" unique_id=106298377 instance=ExtResource("1_k3713")]
+layout_mode = 2
+
+[node name="TaskLine5" parent="PaneContainer/VBoxContainer/Scroll/ItemList" unique_id=237789164 instance=ExtResource("1_k3713")]
+layout_mode = 2
+
+[node name="TaskLine6" parent="PaneContainer/VBoxContainer/Scroll/ItemList" unique_id=502677624 instance=ExtResource("1_k3713")]
+layout_mode = 2
+
+[node name="TaskLine7" parent="PaneContainer/VBoxContainer/Scroll/ItemList" unique_id=576808732 instance=ExtResource("1_k3713")]
+layout_mode = 2
+
+[connection signal="pressed" from="PaneContainer/VBoxContainer/CloseBtn" to="." method="_on_close_btn_pressed"]
