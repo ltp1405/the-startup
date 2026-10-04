@@ -1,8 +1,7 @@
 extends CenterContainer
 
 const DETAIL := "PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"
-const LIST := "PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TabContainer/ScrollContainer/ItemList"
-
+const LIST := "PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TabContainer/All Items/ItemList"
 @onready var item_list: ItemList = get_node(LIST)
 @onready var preview: TextureRect = get_node(DETAIL + "/TextureRect")
 @onready var description: Label = get_node(DETAIL + "/Label")
@@ -27,7 +26,7 @@ func _ready() -> void:
 func open(catalog: ShopCatalog, shop_name: String = "Shop") -> void:
 	_catalog = catalog
 	_selected = -1
-	title_label.text = shop_name
+	title_label.text = shop_name.to_upper()
 	_rebuild()
 	visible = true
 

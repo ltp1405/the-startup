@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://bdf2krimdvcsg"]
+
+[ext_resource type="Script" uid="uid://c6savuigdqj5u" path="res://scripts/shop_item.gd" id="1_mchl4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tq8dh"]
+load_path = "res://.godot/imported/Modern_Office_16x16.png-59637b2d9af8baeb7ae5c13a678e5737.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6ttl"]
+atlas = SubResource("CompressedTexture2D_tq8dh")
+region = Rect2(100, 289, 25, 20)
+
+[resource]
+script = ExtResource("1_mchl4")
+title = "Normal Table"
+icon = SubResource("AtlasTexture_s6ttl")
+price = 50
+metadata/_custom_type_script = "uid://c6savuigdqj5u"

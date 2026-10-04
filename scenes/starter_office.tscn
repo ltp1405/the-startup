@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cd5wyrjdt6w57"]
 
+[ext_resource type="Script" uid="uid://fifivyf7dupk" path="res://scripts/day_night.gd" id="1_7bnyn"]
 [ext_resource type="TileSet" uid="uid://8llq7qln3ucm" path="res://office1616.tres" id="1_30hdw"]
 [ext_resource type="PackedScene" uid="uid://b46jp6ytwok36" path="res://lily.tscn" id="2_p0vk3"]
 [ext_resource type="PackedScene" uid="uid://d16g0aumm6qkh" path="res://scenes/ui.tscn" id="3_d375u"]
@@ -14,6 +15,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(225, 145, 383, 143, 384
 
 [node name="starter_office" type="Node2D" unique_id=1876238948]
 y_sort_enabled = true
+
+[node name="Daynight" type="CanvasModulate" parent="." unique_id=1106684724]
+script = ExtResource("1_7bnyn")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=227136214]
 y_sort_enabled = true

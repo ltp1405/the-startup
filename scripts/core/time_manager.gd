@@ -56,6 +56,9 @@ func _ready() -> void:
 func hour() -> int:
 	return (tick_of_day * MINUTES_PER_TICK) / 60
 
+func fast_forward():
+	Engine.time_scale = 128
+
 func minute() -> int:
 	return (tick_of_day * MINUTES_PER_TICK) % 60
 
@@ -104,6 +107,7 @@ func _on_timer_timeout() -> void:
 		day_ended.emit(day)
 		day += 1
 		day_started.emit(day)
+		Engine.time_scale = 1
 
 	tick.emit(total_tick())
 

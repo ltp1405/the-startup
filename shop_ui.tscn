@@ -36,6 +36,7 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
 text = "SHOP"
 
 [node name="CloseBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1445299762]
@@ -53,13 +54,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 current_tab = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TabContainer" unique_id=226860830]
+[node name="All Items" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TabContainer" unique_id=226860830]
 custom_minimum_size = Vector2(400, 300)
 custom_maximum_size = Vector2(500, 500)
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="ItemList" type="ItemList" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TabContainer/ScrollContainer" unique_id=721928545]
+[node name="ItemList" type="ItemList" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TabContainer/All Items" unique_id=721928545]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -72,8 +73,11 @@ size_flags_horizontal = 8
 size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1532926314]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("1_fscwk")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=424418479]
 custom_minimum_size = Vector2(200, 0)
@@ -83,15 +87,17 @@ autowrap_mode = 2
 
 [node name="Price" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1188404771]
 layout_mode = 2
+size_flags_vertical = 8
 theme_override_font_sizes/font_size = 18
 text = "$0"
 
 [node name="BuyBtn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1907735522]
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 8
 disabled = true
 text = "Mua"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/CloseBtn" to="." method="_on_close_btn_pressed"]
-[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TabContainer/ScrollContainer/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TabContainer/All Items/ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/BuyBtn" to="." method="_on_buy_btn_pressed"]

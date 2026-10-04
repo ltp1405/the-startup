@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://cca3u8qmsko6"]
+
+[ext_resource type="Texture2D" uid="uid://dsp4lm2igskhc" path="res://assets/modern_office/Modern_Office_16x16.png" id="1_65isv"]
+[ext_resource type="Script" uid="uid://c6savuigdqj5u" path="res://scripts/shop_item.gd" id="2_wpgcg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icc4n"]
+atlas = ExtResource("1_65isv")
+region = Rect2(179, 179, 26, 13)
+
+[resource]
+script = ExtResource("2_wpgcg")
+title = "Air Conditioner"
+icon = SubResource("AtlasTexture_icc4n")
+price = 300
+metadata/_custom_type_script = "uid://c6savuigdqj5u"

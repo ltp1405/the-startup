@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b1tskbrd0ard1" path="res://ui/task_board.tscn" id="6_vsj0x"]
 [ext_resource type="PackedScene" uid="uid://bsyei6niqyuvv" path="res://ui/select_action_panel.tscn" id="7_qsv74"]
 [ext_resource type="PackedScene" uid="uid://c8invuib0ard1" path="res://ui/inventory_ui.tscn" id="8_h1mc3"]
+[ext_resource type="Script" uid="uid://dokpk1ihuxgbf" path="res://scripts/fast_forward_button.gd" id="9_cgfq5"]
 
 [node name="ui" type="CanvasLayer" unique_id=1273777244]
 process_mode = 3
@@ -48,3 +49,13 @@ visible = false
 visible = false
 
 [node name="InventoryUI" parent="." unique_id=1108648114 instance=ExtResource("8_h1mc3")]
+
+[node name="Fast Forward Button" type="Button" parent="." unique_id=1795586760]
+offset_left = 1.0
+offset_top = 12.0
+offset_right = 105.0
+offset_bottom = 43.0
+text = "fast forward"
+script = ExtResource("9_cgfq5")
+
+[connection signal="pressed" from="Fast Forward Button" to="Fast Forward Button" method="_on_pressed"]

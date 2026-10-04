@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://dxvb2fl7wjt33"]
+
+[ext_resource type="Texture2D" uid="uid://dsp4lm2igskhc" path="res://assets/modern_office/Modern_Office_16x16.png" id="1_qk0uv"]
+[ext_resource type="Script" uid="uid://c6savuigdqj5u" path="res://scripts/shop_item.gd" id="2_wb8iu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0mj0"]
+atlas = ExtResource("1_qk0uv")
+region = Rect2(98, 204, 12, 26)
+
+[resource]
+script = ExtResource("2_wb8iu")
+title = "Average Tree Pot"
+icon = SubResource("AtlasTexture_i0mj0")
+metadata/_custom_type_script = "uid://c6savuigdqj5u"

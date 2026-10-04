@@ -7,6 +7,24 @@
 [ext_resource type="PackedScene" uid="uid://d16g0aumm6qkh" path="res://scenes/ui.tscn" id="3_ms2es"]
 [ext_resource type="Resource" uid="uid://bh5ml64fcqqdc" path="res://tasks/task2.tres" id="4_yn4qk"]
 [ext_resource type="PackedScene" uid="uid://ckdb6026kbmfv" path="res://scenes/change_scene_zone.tscn" id="7_yn4qk"]
+[ext_resource type="Script" uid="uid://djawf2sd1mf65" path="res://scripts/shop.gd" id="8_yn4qk"]
+[ext_resource type="Script" uid="uid://c6savuigdqj5u" path="res://scripts/shop_item.gd" id="9_5q1rr"]
+[ext_resource type="Script" uid="uid://brs0fveldredi" path="res://scripts/shop_catalog.gd" id="10_po04c"]
+[ext_resource type="Resource" uid="uid://cx32ehynpi6a" path="res://resources/shop_items/normal_chair.tres" id="10_uutfq"]
+[ext_resource type="Resource" uid="uid://bvg8cpv20gvkb" path="res://resources/shop_items/ergonomic_chair.tres" id="11_b00ts"]
+[ext_resource type="Resource" uid="uid://b1nq1138oneg6" path="res://resources/shop_items/height_adjustable_table.tres" id="11_u4arb"]
+[ext_resource type="Resource" uid="uid://bdf2krimdvcsg" path="res://resources/shop_items/normal_table.tres" id="12_i0mj0"]
+[ext_resource type="Resource" uid="uid://cacmm3x28fg02" path="res://resources/shop_items/small_tree_pot.tres" id="14_b00ts"]
+[ext_resource type="Resource" uid="uid://dxvb2fl7wjt33" path="res://resources/shop_items/average_tree_pot.tres" id="15_i0mj0"]
+[ext_resource type="Resource" uid="uid://cca3u8qmsko6" path="res://resources/shop_items/air_conditioner.tres" id="16_i0mj0"]
+[ext_resource type="Resource" uid="uid://bqe2fro1un5j2" path="res://resources/shop_items/big_tree_pot.tres" id="16_ie20d"]
+
+[sub_resource type="Resource" id="Resource_yn4qk"]
+script = ExtResource("10_po04c")
+items = Array[ExtResource("9_5q1rr")]([ExtResource("10_uutfq"), ExtResource("11_b00ts"), ExtResource("12_i0mj0"), ExtResource("11_u4arb"), ExtResource("14_b00ts"), ExtResource("15_i0mj0"), ExtResource("16_ie20d"), ExtResource("16_i0mj0")])
+metadata/_custom_type_script = "uid://brs0fveldredi"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsbex"]
 
 [node name="town" type="Node2D" unique_id=940456292]
 
@@ -16,20 +34,40 @@ position = Vector2(345, 227)
 [node name="NPC" parent="." unique_id=756910753 instance=ExtResource("1_gt07c")]
 position = Vector2(231, 111)
 tasks_to_give = Array[ExtResource("2_t6cq8")]([ExtResource("3_cq4yp"), ExtResource("4_yn4qk")])
-hire_status = 0
 worker_template = null
 
 [node name="Lily" parent="." unique_id=1502626967 instance=ExtResource("2_f2a5t")]
 position = Vector2(398, 167)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=306982314]
-position = Vector2(311, 161)
+[node name="Camera2D" type="Camera2D" parent="Lily" unique_id=306982314]
+position = Vector2(0, -9)
 zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="ui" parent="." unique_id=1273777244 instance=ExtResource("3_ms2es")]
 
-[node name="Area2D" parent="." unique_id=1998357536 instance=ExtResource("7_yn4qk")]
+[node name="My Office" parent="." unique_id=1998357536 instance=ExtResource("7_yn4qk")]
 position = Vector2(368, 146)
 next_scene_name = "starter_office"
+
+[node name="Store" type="Area2D" parent="." unique_id=507102306]
+position = Vector2(351, 51)
+script = ExtResource("8_yn4qk")
+catalog = SubResource("Resource_yn4qk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Store" unique_id=1405886152]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_dsbex")
+
+[node name="Label" type="Label" parent="Store" unique_id=625252336]
+offset_left = -24.0
+offset_top = 3.0
+offset_right = 26.0
+offset_bottom = 26.0
+text = "STORE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [editable path="ui"]

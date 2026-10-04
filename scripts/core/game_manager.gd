@@ -1,6 +1,6 @@
 extends Node
 
-@export var money = 100
+@export var money := 200
 
 # Bills that will be charged the next day
 @export var bills = []
@@ -56,7 +56,13 @@ func _begin_morning() -> void:
 	# wait for confirm_pay_bill() to continue
 
 func _charge_bill() -> void:
-	var next_bills = []
+	var pay_salary = TimeManager.day % 7 == 0
+	if pay_salary:
+		var sum := 0
+		for worker in WorkerManager.roaster:
+			sum += worker.wage
+			
+		spend(sum)
 
 func _on_day_started(_day: int) -> void:
 	_begin_morning()

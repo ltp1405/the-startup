@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3 uid="uid://b1nq1138oneg6"]
+
+[ext_resource type="Script" uid="uid://c6savuigdqj5u" path="res://scripts/shop_item.gd" id="1_omo5m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3vaid"]
+load_path = "res://.godot/imported/Modern_Office_16x16.png-59637b2d9af8baeb7ae5c13a678e5737.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjgbr"]
+atlas = SubResource("CompressedTexture2D_3vaid")
+region = Rect2(100, 321, 25, 20)
+
+[resource]
+script = ExtResource("1_omo5m")
+title = "Height adjustable Table"
+icon = SubResource("AtlasTexture_pjgbr")
+price = 200
+metadata/_custom_type_script = "uid://c6savuigdqj5u"

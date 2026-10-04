@@ -6,4 +6,3 @@
 script = ExtResource("1_smx3j")
 
 [node name="EmployeeManager" type="Node" parent="." unique_id=338081013]
-
