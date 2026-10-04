@@ -1,8 +1,5 @@
 extends Area2D
 
-@onready var npc = $".."
-
-signal interact_requested
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +9,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-func interact() -> void:
-	interact_requested.emit()

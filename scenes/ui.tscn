@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d16g0aumm6qkh"]
+
+[ext_resource type="PackedScene" uid="uid://cigruexojtlgg" path="res://ui/hud.tscn" id="1_ktti3"]
+[ext_resource type="PackedScene" uid="uid://1cjak7732pqm" path="res://ui/bill_ui.tscn" id="2_cgfq5"]
+[ext_resource type="PackedScene" uid="uid://kqtxsyxl0d4l" path="res://ui/choose_task_ui.tscn" id="3_7dvkv"]
+[ext_resource type="PackedScene" uid="uid://bcongf7fiona8" path="res://ui/accept_task_box.tscn" id="4_vdcm2"]
+[ext_resource type="PackedScene" uid="uid://ejfxopq8wg0p" path="res://shop_ui.tscn" id="5_6rmj2"]
+[ext_resource type="PackedScene" uid="uid://b1tskbrd0ard1" path="res://ui/task_board.tscn" id="6_vsj0x"]
+[ext_resource type="PackedScene" uid="uid://bsyei6niqyuvv" path="res://ui/select_action_panel.tscn" id="7_qsv74"]
+[ext_resource type="PackedScene" uid="uid://c8invuib0ard1" path="res://ui/inventory_ui.tscn" id="8_h1mc3"]
+
+[node name="ui" type="CanvasLayer" unique_id=1273777244]
+process_mode = 3
+
+[node name="HUD" parent="." unique_id=1878832151 instance=ExtResource("1_ktti3")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Bill List" parent="." unique_id=942198591 instance=ExtResource("2_cgfq5")]
+visible = false
+
+[node name="ChooseTaskUI" parent="." unique_id=1283469009 instance=ExtResource("3_7dvkv")]
+visible = false
+mouse_filter = 0
+
+[node name="AcceptTaskBox" parent="." unique_id=831869669 instance=ExtResource("4_vdcm2")]
+visible = false
+
+[node name="ShopUI" parent="." unique_id=1087580686 instance=ExtResource("5_6rmj2")]
+visible = false
+
+[node name="TaskBoard" parent="." unique_id=1565879968 instance=ExtResource("6_vsj0x")]
+
+[node name="SelectActionPanel" parent="." unique_id=718077420 instance=ExtResource("7_qsv74")]
+visible = false
+
+[node name="InventoryUI" parent="." unique_id=1108648114 instance=ExtResource("8_h1mc3")]

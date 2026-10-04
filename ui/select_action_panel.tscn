@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bsyei6niqyuvv"]
+
+[ext_resource type="Script" uid="uid://c4k325i3ei837" path="res://scripts/select_action_panel.gd" id="1_x5umg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsbex"]
+bg_color = Color(0.49621266, 0.66679, 0.184053, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.57, 0.42037496, 0.1425, 1)
+
+[node name="SelectActionPanel" type="CenterContainer" unique_id=718077420]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -224.0
+offset_top = 56.0
+offset_right = -224.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x5umg")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1628238316]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsbex")
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="PanelContainer" unique_id=1856588163]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Close" type="Button" parent="PanelContainer/HBoxContainer2" unique_id=1364752935]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Close"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer2" unique_id=1618670979]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer2/HBoxContainer" unique_id=2073797004]
+layout_mode = 2
+text = "Action 1"
+
+[node name="Button2" type="Button" parent="PanelContainer/HBoxContainer2/HBoxContainer" unique_id=1492923606]
+layout_mode = 2
+text = "Action 2"
+
+[node name="Button3" type="Button" parent="PanelContainer/HBoxContainer2/HBoxContainer" unique_id=1422218652]
+layout_mode = 2
+text = "Action 3"
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer2/Close" to="." method="_on_close_pressed"]

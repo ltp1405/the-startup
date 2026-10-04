@@ -7,6 +7,7 @@ extends MarginContainer
 func _ready() -> void:
 	TimeManager.tick.connect(_on_tick)
 	TimeManager.day_started.connect(_on_day_started)
+	GameManager.money_changed.connect(_on_money_changed)
 	_refresh()
 
 func _on_tick(_total_tick: int) -> void:
@@ -15,8 +16,10 @@ func _on_tick(_total_tick: int) -> void:
 func _on_day_started(_day: int) -> void:
 	_refresh()
 
+func _on_money_changed(_money: int) -> void:
+	_refresh()
+
 func _refresh() -> void:
 	day_label.text = "Day %d" % TimeManager.day
 	time_label.text = TimeManager.time_string()
-	# GameManager has no money_changed signal yet, so this rides the tick
 	money_label.text = "Money %d" % GameManager.money

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShopItem" format=3]
+
+[ext_resource type="Script" uid="uid://c6savuigdqj5u" path="res://scripts/shop_item.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+title = "Nước tăng lực"
+description = "Tỉnh nhanh, mệt sau. Dùng khi gấp."
+price = 30
+metadata/_custom_type_script = "uid://c6savuigdqj5u"

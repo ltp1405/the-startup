@@ -26,7 +26,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		play("idle")
 
-func _input(event) -> void:
+func _unhandled_input(event) -> void:
 	if event.is_action_pressed("ui_accept"):
 		var overlapping_areas = interaction_area.get_overlapping_areas()
 		for area in overlapping_areas:

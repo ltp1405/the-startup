@@ -11,9 +11,13 @@ signal task_accepted(task: Task)
 
 var task: Task
 
+# How many workers are already on this task, 0 while it is in the backlog.
+var crew := 0
+
 # Fills the row. Safe to call before the node is in the tree.
-func setup(p_task: Task) -> void:
+func setup(p_task: Task, p_crew := 0) -> void:
 	task = p_task
+	crew = p_crew
 	if is_node_ready():
 		_refresh()
 
@@ -26,7 +30,7 @@ func _refresh() -> void:
 	description.text = task.description
 	title.text = task.title
 	avatar.texture = task.customer.avatar if task.customer else null
-	est.text = "%dhrs" % task.time
+	est.text = "%dhrs · %d working" % [task.time, crew] if crew > 0 else "%dhrs" % task.time
 	deadline.text = "%dhrs" % task.deadline
 	money.text = "$%d" % task.money
 

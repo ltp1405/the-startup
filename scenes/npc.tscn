@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bciebb4alo1b3"]
+
+[ext_resource type="Script" uid="uid://c2qb8uarle3kj" path="res://scripts/npc.gd" id="1_7n8xq"]
+[ext_resource type="Resource" uid="uid://c2anfw3d2oyp4" path="res://resources/workers/worker1.tres" id="2_4wlns"]
+[ext_resource type="SpriteFrames" uid="uid://d3g1jv0mdunwm" path="res://lily_frames.tres" id="3_tl2vt"]
+[ext_resource type="Script" uid="uid://coiuitvmowwrm" path="res://character_anim_autostart.gd" id="4_4wlns"]
+[ext_resource type="Script" uid="uid://bnf4yhohikelc" path="res://scenes/npc_interact.gd" id="4_hwkja"]
+[ext_resource type="Script" uid="uid://cyf6etgtp8prv" path="res://scripts/worker.gd" id="6_tl2vt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ccanh"]
+radius = 4.0
+height = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qi2b"]
+radius = 14.550841
+
+[node name="NPC" type="CharacterBody2D" unique_id=441114431]
+disable_mode = 1
+collision_layer = 3
+collision_mask = 0
+floor_stop_on_slope = false
+script = ExtResource("1_7n8xq")
+worker_template = ExtResource("2_4wlns")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2113776725]
+y_sort_enabled = true
+sprite_frames = ExtResource("3_tl2vt")
+animation = &"attack_a_down"
+offset = Vector2(0, -16)
+script = ExtResource("4_4wlns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998459467]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_ccanh")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1114529591]
+script = ExtResource("4_hwkja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=123769932]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_6qi2b")
+
+[node name="Debug" type="Node2D" parent="." unique_id=964923182]
+
+[node name="DebugLabel" type="Label" parent="Debug" unique_id=1197578349]
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 21.0
+offset_bottom = -21.0
+theme_override_font_sizes/font_size = 6
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1778124594]
+
+[node name="Label" type="Label" parent="Node2D" unique_id=607920263]
+offset_left = -20.0
+offset_top = -38.0
+offset_right = 20.0
+offset_bottom = -15.0
+theme_override_font_sizes/font_size = 9
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Worker" type="Node" parent="." unique_id=2098270093]
+script = ExtResource("6_tl2vt")
+
+[connection signal="interact_requested" from="InteractionArea" to="." method="_on_interaction_area_interact_requested"]
+[connection signal="task_started" from="Worker" to="." method="_on_worker_task_started"]

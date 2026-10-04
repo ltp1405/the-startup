@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ckdb6026kbmfv"]
+
+[ext_resource type="Script" uid="uid://cxnx1ek2hiueh" path="res://scripts/change_scene.gd" id="1_dtlxu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vayyo"]
+size = Vector2(20, 61.994713)
+
+[node name="Area2D" type="Area2D" unique_id=1998357536]
+script = ExtResource("1_dtlxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1200080158]
+position = Vector2(59, 14)
+rotation = -0.013049348
+shape = SubResource("RectangleShape2D_vayyo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

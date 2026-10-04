@@ -5,6 +5,7 @@ var upcoming_bill_container: VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	UIManager.register(self)
 	GameManager.bill_charged.connect(_on_bill_charged)
 	today_bill_container = %BillList
 	upcoming_bill_container = %UpcomingBillList

@@ -1,0 +1,84 @@
+[gd_scene format=4 uid="uid://cd5wyrjdt6w57"]
+
+[ext_resource type="TileSet" uid="uid://8llq7qln3ucm" path="res://office1616.tres" id="1_30hdw"]
+[ext_resource type="PackedScene" uid="uid://b46jp6ytwok36" path="res://lily.tscn" id="2_p0vk3"]
+[ext_resource type="PackedScene" uid="uid://d16g0aumm6qkh" path="res://scenes/ui.tscn" id="3_d375u"]
+[ext_resource type="PackedScene" uid="uid://ckdb6026kbmfv" path="res://scenes/change_scene_zone.tscn" id="4_wpe42"]
+[ext_resource type="PackedScene" uid="uid://c813k81opmcir" path="res://scenes/town.tscn" id="5_ccanh"]
+[ext_resource type="PackedScene" uid="uid://bciebb4alo1b3" path="res://scenes/npc.tscn" id="5_knwrw"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6qi2b"]
+vertices = PackedVector2Array(374, 154, 374, 246, 357.3672, 214.92969, 357.3672, 166, 319.9375, 214.54688, 344.29688, 214.6875, 234, 246, 309.3672, 214.92969, 357.1875, 166, 357.28906, 162.92188, 234, 154, 346, 162.32031, 330, 162.52344, 330, 162.45313, 298, 162.32031, 282, 162.52344, 282, 162.45313, 298, 162.45313, 309.3672, 214.54688, 271.9375, 214.54688, 296.29688, 214.6875, 247.57031, 214.54688, 247.57031, 195.32813, 246.89063, 186, 346, 162.82031, 248.21875, 162.45313, 247.28125, 186, 247.13281, 181.60938, 247.0625, 179.14063, 247.28125, 179.14063)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 2, 1, 6, 7), PackedInt32Array(3, 8, 9, 0), PackedInt32Array(10, 0, 9, 11), PackedInt32Array(11, 12, 13), PackedInt32Array(14, 15, 16), PackedInt32Array(13, 17, 14), PackedInt32Array(7, 18, 4), PackedInt32Array(19, 20, 7, 6, 21), PackedInt32Array(22, 21, 6, 10, 23), PackedInt32Array(9, 24, 11), PackedInt32Array(10, 11, 13, 14), PackedInt32Array(10, 14, 16, 25), PackedInt32Array(23, 26, 22), PackedInt32Array(27, 23, 10, 28), PackedInt32Array(28, 10, 25, 29)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(225, 145, 383, 143, 384, 256, 224, 256)])
+
+[node name="starter_office" type="Node2D" unique_id=1876238948]
+y_sort_enabled = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=227136214]
+y_sort_enabled = true
+navigation_polygon = SubResource("NavigationPolygon_6qi2b")
+
+[node name="Floor" type="TileMapLayer" parent="NavigationRegion2D" unique_id=2060392649]
+tile_map_data = PackedByteArray("AAAOAAkAAQALAAUAAAAPAAoAAQALAAYAAAAQAAoAAQALAAYAAAARAAoAAQALAAYAAAASAAoAAQALAAYAAAATAAoAAQALAAYAAAAUAAoAAQALAAYAAAAOAAoAAQALAAYAAAAPAAkAAQALAAUAAAAQAAkAAQALAAUAAAARAAkAAQALAAUAAAASAAkAAQALAAUAAAATAAkAAQALAAUAAAAUAAkAAQALAAUAAAAOAAsAAQALAAYAAAAOAAwAAQALAAYAAAAOAA0AAQALAAYAAAAPAAsAAQALAAYAAAAPAAwAAQALAAYAAAAPAA0AAQALAAYAAAAQAA0AAQALAAYAAAAQAAwAAQALAAYAAAAQAAsAAQALAAYAAAARAAsAAQALAAYAAAARAAwAAQALAAYAAAARAA0AAQALAAYAAAASAA0AAQALAAYAAAASAAwAAQALAAYAAAATAAwAAQALAAYAAAATAAsAAQALAAYAAAAUAAsAAQALAAYAAAAUAAwAAQALAAYAAAAUAA0AAQALAAYAAAATAA0AAQALAAYAAAASAAsAAQALAAYAAAANAAwAAQALAAYAAAANAAsAAQALAAYAAAAVAAoAAQALAAYAAAAVAAsAAQALAAYAAAAVAAwAAQALAAYAAAAVAA0AAQALAAYAAAAVAA4AAQALAAYAAAAVAA8AAQALAAYAAAAWAAoAAQALAAYAAAAWAAsAAQALAAYAAAAWAAwAAQALAAYAAAAWAA0AAQALAAYAAAAWAA4AAQALAAYAAAAWAA8AAQALAAYAAAAXAAoAAQALAAYAAAAXAAsAAQALAAYAAAAXAAwAAQALAAYAAAAXAA0AAQALAAYAAAAXAA4AAQALAAYAAAAXAA8AAQALAAYAAAAOAA4AAQALAAYAAAAOAA8AAQALAAYAAAAPAA4AAQALAAYAAAAPAA8AAQALAAYAAAAQAA4AAQALAAYAAAAQAA8AAQALAAYAAAARAA4AAQALAAYAAAARAA8AAQALAAYAAAASAA4AAQALAAYAAAASAA8AAQALAAYAAAATAA4AAQALAAYAAAATAA8AAQALAAYAAAAUAA4AAQALAAYAAAAUAA8AAQALAAYAAAAVAAkAAQALAAUAAAAWAAkAAQALAAUAAAAXAAkAAQALAAUAAAA=")
+tile_set = ExtResource("1_30hdw")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="NavigationRegion2D" unique_id=1024760439]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAOAAcAAQABAAkAAAAOAAgAAQABAAoAAAAQAAcAAQABAAkAAAAQAAgAAQABAAoAAAAPAAcAAQABAAkAAAAPAAgAAQABAAoAAAARAAcAAQABAAkAAAARAAgAAQABAAoAAAASAAcAAQABAAkAAAASAAgAAQABAAoAAAATAAcAAQABAAkAAAATAAgAAQABAAoAAAAUAAcAAQABAAkAAAAUAAgAAQABAAoAAAANAAcAAQAHAAEAAAANAAgAAQAHAAIAAAANAAkAAQAHAAIAAAANAA0AAQABAAIAAAANAAoAAQACAAkAAAANAAsAAQACAAoAAAANAA4AAQAHAAIAAAANAA8AAQAHAAIAAAANABAAAQAHAAMAAAAOABAAAQAIAAMAAAAPABAAAQAIAAMAAAAQABAAAQAIAAMAAAARABAAAQAIAAMAAAASABAAAQAIAAMAAAATABAAAQAIAAMAAAAUABAAAQAIAAMAAAAVABAAAQAIAAMAAAAWABAAAQAIAAMAAAAXABAAAQAIAAMAAAAYABAAAQAJAAMAAAAYAA8AAQAJAAIAAAAYAA4AAQAJAAIAAAAYAA0AAQAJAAIAAAAYAAwAAQAJAAIAAAAYAAsAAQAJAAIAAAAYAAoAAQAJAAIAAAAYAAkAAQAJAAIAAAAYAAgAAQAJAAIAAAAYAAcAAQAJAAEAAAAVAAcAAQABAAkAAAAVAAgAAQABAAoAAAAWAAcAAQABAAkAAAAWAAgAAQABAAoAAAAXAAcAAQABAAkAAAAXAAgAAQABAAoAAAA=")
+tile_set = ExtResource("1_30hdw")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="NavigationRegion2D" unique_id=1940703824]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAARAAoAAAAIAB4AAAARAAsAAAAIAB8AAAASAAoAAAAJAB4AAAASAAsAAAAJAB8AAAATAAoAAAAHAB4AAAATAAsAAAAHAB8AAAAUAAoAAAAIAB4AAAAUAAsAAAAIAB8AAAAVAAoAAAAJAB4AAAAVAAsAAAAJAB8AAAAQAAoAAAAHAB4AAAAQAAsAAAAHAB8AAAA=")
+tile_set = ExtResource("1_30hdw")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="NavigationRegion2D" unique_id=1197155385]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAARAAsAAAAIABwAAAARAAwAAAAIAB0AAAASAAsAAAAJABwAAAASAAwAAAAJAB0AAAATAAsAAAAHABwAAAATAAwAAAAHAB0AAAAUAAsAAAAIABwAAAAUAAwAAAAIAB0AAAAVAAsAAAAJABwAAAAVAAwAAAAJAB0AAAAQAAsAAAAHABwAAAAQAAwAAAAHAB0AAAA=")
+tile_set = ExtResource("1_30hdw")
+
+[node name="Furniture" type="TileMapLayer" parent="NavigationRegion2D" unique_id=1635227925]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAARAAkAAAABAAgAAAARAAoAAAABAAkAAAA=")
+tile_set = ExtResource("1_30hdw")
+
+[node name="Furniture 2" type="TileMapLayer" parent="NavigationRegion2D" unique_id=1929330688]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAOAAcAAAAGAAcAAAAOAAgAAAAGAAgAAAAOAAkAAAAGAAkAAAARAAcAAAAIAAgAAAARAAgAAAAIAAkAAAASAAcAAAAJAAgAAAASAAgAAAAJAAkAAAAWAA8AAAAGAAoAAAA=")
+tile_set = ExtResource("1_30hdw")
+
+[node name="TileMapLayer5" type="TileMapLayer" parent="NavigationRegion2D" unique_id=1500154964]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAARAAoAAAAKAAcAAAAQAAoAAAAQAAoAAAARAAsAAAAKAAgAAAAQAAsAAAAQAAsAAAA=")
+tile_set = ExtResource("1_30hdw")
+
+[node name="NPC" parent="NavigationRegion2D" unique_id=441114431 instance=ExtResource("5_knwrw")]
+y_sort_enabled = true
+position = Vector2(331, 227)
+walk_speed = 50.0
+run_speed = 100.0
+work_position = Vector2(280, 172)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="NavigationRegion2D/NPC" unique_id=698788368]
+path_desired_distance = 5.0
+path_max_distance = 400.0
+simplify_path = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=80100120]
+position = Vector2(307, 187)
+zoom = Vector2(2, 2)
+
+[node name="Lily" parent="." unique_id=1502626967 instance=ExtResource("2_p0vk3")]
+position = Vector2(233, 205)
+
+[node name="ui" parent="." unique_id=1273777244 instance=ExtResource("3_d375u")]
+
+[node name="Area2D" parent="." unique_id=1998357536 instance=ExtResource("4_wpe42")]
+position = Vector2(137, 172)
+next_scene = ExtResource("5_ccanh")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1970638917]
+position = Vector2(280, 165)
+
+[connection signal="target_reached" from="NavigationRegion2D/NPC/NavigationAgent2D" to="NavigationRegion2D/NPC" method="_on_navigation_agent_2d_target_reached"]

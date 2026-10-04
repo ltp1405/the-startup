@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ShopCatalog" format=3]
+
+[ext_resource type="Script" path="res://scripts/shop_catalog.gd" id="1_cat"]
+[ext_resource type="Script" uid="uid://c6savuigdqj5u" path="res://scripts/shop_item.gd" id="2_item"]
+[ext_resource type="Resource" path="res://resources/shop_items/coffee.tres" id="3_coffee"]
+[ext_resource type="Resource" path="res://resources/shop_items/energy_drink.tres" id="4_energy"]
+
+[resource]
+script = ExtResource("1_cat")
+items = Array[ExtResource("2_item")]([ExtResource("3_coffee"), ExtResource("4_energy")])

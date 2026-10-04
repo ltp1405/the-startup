@@ -4,18 +4,20 @@
 [ext_resource type="SpriteFrames" uid="uid://d3g1jv0mdunwm" path="res://lily_frames.tres" id="2_frames"]
 [ext_resource type="Script" uid="uid://coiuitvmowwrm" path="res://character_anim_autostart.gd" id="3_w8dsj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(7, 4)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bfiln"]
+radius = 7.0
+height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dsbex"]
 radius = 17.029387
 
 [node name="Lily" type="CharacterBody2D" unique_id=1502626967]
 script = ExtResource("1_script")
-walk_speed = 27.5
-run_speed = 55.0
+walk_speed = 100.0
+run_speed = 200.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2102150882]
+y_sort_enabled = true
 texture_filter = 1
 sprite_frames = ExtResource("2_frames")
 animation = &"idle_down"
@@ -23,11 +25,13 @@ offset = Vector2(0, -16)
 script = ExtResource("3_w8dsj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1053128857]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_1")
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_bfiln")
+debug_color = Color(0, 0.7, 0.68833333, 0.41960785)
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=2237733]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=205359470]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_dsbex")
+debug_color = Color(0.46199998, 0.7, 0.5135667, 0.41960785)

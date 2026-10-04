@@ -12,6 +12,7 @@ var giver: Object = null
 
 func _ready() -> void:
 	add_to_group("accept_task_box")
+	UIManager.register(self)
 	_refresh()
 
 # Shows the offer. Safe to call before the node is in the tree.

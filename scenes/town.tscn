@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c813k81opmcir"]
+
+[ext_resource type="PackedScene" uid="uid://bciebb4alo1b3" path="res://scenes/npc.tscn" id="1_gt07c"]
+[ext_resource type="PackedScene" uid="uid://b46jp6ytwok36" path="res://lily.tscn" id="2_f2a5t"]
+[ext_resource type="Script" uid="uid://bx0t73ct35fxr" path="res://task.gd" id="2_t6cq8"]
+[ext_resource type="Resource" uid="uid://d2mdg4c71ktvw" path="res://tasks/task1.tres" id="3_cq4yp"]
+[ext_resource type="PackedScene" uid="uid://d16g0aumm6qkh" path="res://scenes/ui.tscn" id="3_ms2es"]
+[ext_resource type="Resource" uid="uid://bh5ml64fcqqdc" path="res://tasks/task2.tres" id="4_yn4qk"]
+[ext_resource type="PackedScene" uid="uid://ckdb6026kbmfv" path="res://scenes/change_scene_zone.tscn" id="7_yn4qk"]
+
+[node name="town" type="Node2D" unique_id=940456292]
+
+[node name="NPC2" parent="." unique_id=441114431 instance=ExtResource("1_gt07c")]
+position = Vector2(345, 227)
+
+[node name="NPC" parent="." unique_id=756910753 instance=ExtResource("1_gt07c")]
+position = Vector2(231, 111)
+tasks_to_give = Array[ExtResource("2_t6cq8")]([ExtResource("3_cq4yp"), ExtResource("4_yn4qk")])
+hire_status = 0
+worker_template = null
+
+[node name="Lily" parent="." unique_id=1502626967 instance=ExtResource("2_f2a5t")]
+position = Vector2(398, 167)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=306982314]
+position = Vector2(311, 161)
+zoom = Vector2(2, 2)
+
+[node name="ui" parent="." unique_id=1273777244 instance=ExtResource("3_ms2es")]
+
+[node name="Area2D" parent="." unique_id=1998357536 instance=ExtResource("7_yn4qk")]
+position = Vector2(368, 146)
+next_scene_name = "starter_office"
+
+[editable path="ui"]
